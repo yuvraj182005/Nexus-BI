@@ -1,86 +1,50 @@
-# NexusBI AI
+# 👋 Hi, I'm K. Yuvraj Sundaram
 
-NexusBI AI is a multi-tenant FastAPI backend for enterprise decision intelligence. The codebase is organized by ownership boundaries: HTTP APIs, application services, repositories, domain engines, asynchronous tasks, AI Gateway, AI Memory, Workflow Automation, Job Orchestration, Data Catalog, Governance Center, Audit Center, Plugin SDK, Observability Center, Enterprise Identity Management, Collaboration Engine, Streaming Analytics, Enterprise AI Copilot, Dashboard Builder Engine, Lineage & Impact Analysis, Global Enterprise Search, Security Hardening Service, SaaS Platform Billing Engine, Plugin & Template Marketplace, Performance Optimizer, and infrastructure adapters.
+🎓 Computer Science (Data Science) Undergraduate at Dayananda Sagar College of Engineering (CGPA: **9.11**)
 
-## Local deployment
+I'm passionate about building **AI-powered applications**, **data-driven solutions**, and **scalable software** that solve real-world business problems. My interests lie at the intersection of **Data Analytics, Machine Learning, Business Intelligence, Full-Stack Development, and Generative AI**.
 
-1. Install Python 3.13+ and Docker Desktop.
-2. Copy `.env.example` to `.env` and replace `SECRET_KEY` with a random secret.
-3. Start infrastructure and the API:
+## 🚀 What I Do
 
-```powershell
-docker compose up --build
-```
+* 📊 Transform raw data into meaningful insights using **Python, SQL, Power BI, and Tableau**
+* 🤖 Develop Machine Learning models for predictive analytics and intelligent decision-making
+* 🌐 Build scalable backend systems with **FastAPI**, **Node.js**, and REST APIs
+* ⚛️ Create responsive web applications using **React**
+* 🗄️ Work with **PostgreSQL** and **MongoDB** for efficient data management
+* 🐳 Containerize applications using **Docker** and follow modern development practices with **Git/GitHub**
 
-4. Run database migrations:
-```powershell
-alembic upgrade head
-```
+## 💻 Tech Stack
 
-5. Open the generated OpenAPI document at `http://localhost:8000/api/v1/docs`.
+**Languages:** Python, SQL, C++, C
 
----
+**Data Analytics:** Pandas, NumPy, Excel, Power BI, Tableau, Data Cleaning, EDA, Statistical Analysis, Data Visualization
 
-## Security Hardening (`app/security`)
+**Machine Learning:** Scikit-learn, Feature Engineering, Predictive Analytics, Model Evaluation
 
-- Security report available in [SECURITY_REPORT.md](file:///C:/Users/K%20BHRAMEE%20SUNDARAM/.gemini/antigravity/brain/73c29603-1059-4888-b22e-79cdec9746ab/SECURITY_REPORT.md).
-- **Prompt Injection & RAG Guardrails**: Scans for system prompt overrides, jailbreaks, and injection payloads.
-- **XSS & SQL Injection Protection**: DuckDB AST validator blocking mutating keywords (`DROP`, `DELETE`, `TRUNCATE`, `EXEC`) and XSS string sanitizer.
-- **File Upload Validation**: Extension restriction and binary header malware detection (`MZ`, `ELF`).
+**Backend:** FastAPI, REST APIs, Node.js, Express.js
 
----
+**Frontend:** React.js
 
-## SaaS Multi-Tenant Billing Engine (`app/saas`)
+**Databases:** PostgreSQL, MongoDB, MySQL
 
-- **Subscription Plans**: `Free`, `Pro`, `Enterprise` tier limits.
-- **Usage Tracking**: Datasets limit, storage MB limit, and daily API calls limits.
-- **Invoicing & Webhooks**: Stripe webhook simulator and PDF invoice downloading.
+**Tools:** Docker, Git, GitHub, VS Code, Jupyter Notebook
 
----
+## 🌟 Featured Projects
 
-## Plugin & Template Marketplace (`app/marketplace`)
+* **NexusBI AI** – Enterprise AI-powered Business Intelligence platform with LLM-powered SQL generation, analytics automation, ETL pipelines, and interactive dashboards.
+* **P&W (Parents & Wags)** – AI-powered pet care and adoption platform featuring secure authentication, real-time communication, AI assistance, and online payments.
+* **Market Genius** – Stock market analytics and prediction platform using Machine Learning, financial indicators, and interactive Power BI dashboards.
+* **Groundwater Pollution Data Analysis** – End-to-end data analysis project focused on Water Quality Index (WQI), pollution trends, and environmental insights.
 
-- **Marketplace Categories**: Plugins, Connectors, Dashboard Templates, Workflow Templates, AI Prompts, Report Templates, Visualization Templates.
-- **Capabilities**: Ratings, reviews, version management, and one-click installation.
+## 📚 Currently Learning
 
----
+* Advanced Machine Learning & Deep Learning
+* Generative AI & Large Language Models (LLMs)
+* Data Engineering & Cloud Technologies
+* System Design & Scalable Backend Architecture
 
-## Complete API Surface
+## 🎯 Career Goal
 
-### SaaS Billing API
-```text
-GET  /api/v1/workspaces/{workspace_id}/saas/usage
-POST /api/v1/workspaces/{workspace_id}/saas/payment-webhook
-```
+To become a skilled **Data Analyst / AI Engineer / Machine Learning Engineer**, leveraging analytics, AI, and software engineering to build intelligent products that create real business impact.
 
-### Marketplace API
-```text
-GET  /api/v1/workspaces/{workspace_id}/marketplace/items
-POST /api/v1/workspaces/{workspace_id}/marketplace/items/{item_id}/install
-POST /api/v1/workspaces/{workspace_id}/marketplace/items/{item_id}/review
-```
-
-### Enterprise Data Lineage & Impact Analysis
-```text
-GET /api/v1/workspaces/{workspace_id}/datasets/{dataset_id}/lineage-graph
-GET /api/v1/workspaces/{workspace_id}/lineage/impact-analysis
-```
-
-### Global Enterprise Search API
-```text
-POST /api/v1/workspaces/{workspace_id}/search
-POST /api/v1/workspaces/{workspace_id}/search/saved
-GET  /api/v1/workspaces/{workspace_id}/search/history
-```
-
-### Enterprise AI Copilot API
-```text
-POST /api/v1/workspaces/{workspace_id}/copilot/execute
-```
-
-### Dashboard Builder API
-```text
-POST /api/v1/workspaces/{workspace_id}/dashboards/builder
-POST /api/v1/workspaces/{workspace_id}/dashboards/{dashboard_id}/snapshot
-POST /api/v1/workspaces/{workspace_id}/dashboards/{dashboard_id}/bookmarks
-```
+📫 **Let's connect and collaborate on innovative AI, Data Analytics, and Open Source projects!**
