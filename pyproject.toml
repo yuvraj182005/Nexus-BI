@@ -1,0 +1,87 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nexusbi-ai"
+version = "0.1.0"
+description = "Enterprise decision intelligence backend"
+requires-python = ">=3.13"
+dependencies = [
+    "alembic>=1.14,<2.0",
+    "asyncpg>=0.30,<1.0",
+    "bcrypt>=4.2,<5.0",
+    "celery[redis]>=5.4,<6.0",
+    "cryptography>=44.0,<45.0",
+    "duckdb>=1.1,<2.0",
+    "email-validator>=2.2,<3.0",
+    "fastapi>=0.115,<1.0",
+    "httpx>=0.28,<1.0",
+    "loguru>=0.7,<1.0",
+    "motor>=3.6,<4.0",
+    "openpyxl>=3.1,<4.0",
+    "pandas>=2.2,<3.0",
+    "passlib[bcrypt]>=1.7,<2.0",
+    "pydantic-settings>=2.7,<3.0",
+    "python-jose[cryptography]>=3.3,<4.0",
+    "python-multipart>=0.0.20,<1.0",
+    "pyarrow>=18.0,<19.0",
+    "redis[hiredis]>=5.2,<6.0",
+    "sqlalchemy[asyncio]>=2.0.36,<3.0",
+    "uvicorn[standard]>=0.34,<1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3,<9.0",
+    "pytest-asyncio>=0.25,<1.0",
+    "ruff>=0.9,<1.0",
+    "mypy>=1.14,<2.0",
+]
+ai = [
+    "langchain>=0.3,<1.0",
+    "langgraph>=0.2,<1.0",
+    "llama-index>=0.12,<1.0",
+    "openai>=1.60,<2.0",
+]
+analytics = [
+    "lightgbm>=4.5,<5.0",
+    "numpy>=2.2,<3.0",
+    "pandas>=2.2,<3.0",
+    "polars>=1.20,<2.0",
+    "pyarrow>=18.0,<19.0",
+    "prophet>=1.1,<2.0",
+    "scikit-learn>=1.6,<2.0",
+    "xgboost>=2.1,<3.0",
+]
+connectors = [
+    "aiomysql>=0.2,<1.0",
+    "aioodbc>=0.5,<1.0",
+    "aiosqlite>=0.20,<1.0",
+    "boto3>=1.36,<2.0",
+    "google-cloud-bigquery>=3.27,<4.0",
+    "gspread>=6.1,<7.0",
+    "openpyxl>=3.1,<4.0",
+    "snowflake-connector-python>=3.14,<4.0",
+]
+exports = [
+    "python-docx>=1.1,<2.0",
+    "python-pptx>=1.0,<2.0",
+    "reportlab>=4.2,<5.0",
+]
+all = ["nexusbi-ai[ai,analytics,connectors,exports]"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+src = ["app", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

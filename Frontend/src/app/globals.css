@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 4%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 6%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 239 84% 67%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217 33% 12%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 14%;
+    --muted-foreground: 215 20% 60%;
+    --accent: 239 84% 67%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 16%;
+    --input: 217 33% 16%;
+    --ring: 239 84% 67%;
+    --radius: 0.75rem;
+    --surface: 222 47% 5%;
+    --surface-elevated: 222 47% 8%;
+    --surface-overlay: 222 47% 10%;
+    --mesh-1: 239 84% 20%;
+    --mesh-2: 280 70% 15%;
+    --mesh-3: 222 47% 8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1, "cv11" 1;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20 rounded-full transition-colors;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/40;
+  }
+}
+
+@layer components {
+  /* Selective Glassmorphism Classes */
+  .glass {
+    @apply bg-background/60 backdrop-blur-xl border border-white/[0.08] shadow-[0_8px_32px_0_rgba(0,0,0,0.36)];
+  }
+
+  .glass-strong {
+    @apply bg-background/80 backdrop-blur-2xl border border-white/[0.12] shadow-[0_16px_48px_0_rgba(0,0,0,0.5)];
+  }
+
+  .glass-panel {
+    @apply bg-card/70 backdrop-blur-md border border-white/[0.06] shadow-lg;
+  }
+
+  .glass-interactive {
+    @apply glass hover:bg-white/[0.06] hover:border-white/[0.16] transition-all duration-300;
+  }
+
+  /* Typography Gradients */
+  .gradient-text {
+    @apply bg-gradient-to-r from-indigo-400 via-purple-300 to-emerald-400 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-alt {
+    @apply bg-gradient-to-r from-emerald-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent;
+  }
+
+  /* Subtle Gradient Borders */
+  .gradient-border {
+    @apply relative before:absolute before:inset-0 before:rounded-[inherit] before:p-[1px] before:bg-gradient-to-r before:from-indigo-500/40 before:via-purple-500/30 before:to-emerald-500/40 before:-z-10;
+  }
+
+  /* Ambient Mesh Canvas */
+  .mesh-bg {
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 20%, hsl(239 84% 67% / 0.12), transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 30%, hsl(280 70% 60% / 0.08), transparent 70%),
+      radial-gradient(ellipse 50% 60% at 50% 80%, hsl(160 80% 40% / 0.06), transparent 70%),
+      hsl(var(--background));
+  }
+
+  .grid-overlay {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.25) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.25) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .dots-overlay {
+    background-image: radial-gradient(hsl(var(--border) / 0.4) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Noise Overlay */
+  .noise-texture {
+    position: relative;
+  }
+
+  .noise-texture::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Shimmer Loading Skeleton */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 0%,
+      hsl(var(--muted-foreground) / 0.15) 50%,
+      hsl(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+
+  /* Glow Shadows */
+  .shadow-glow {
+    box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.25);
+  }
+
+  .shadow-glow-lg {
+    box-shadow: 0 0 50px -10px rgba(99, 102, 241, 0.35);
+  }
+
+  .shadow-glow-emerald {
+    box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.25);
+  }
+
+  /* Ripple Button Interactive Effect */
+  .btn-ripple {
+    @apply relative overflow-hidden transition-transform active:scale-[0.98];
+  }
+
+  .btn-ripple::after {
+    content: "";
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: radial-gradient(circle, hsl(var(--primary) / 0.3) 0%, transparent 70%);
+  }
+
+  .btn-ripple:active::after {
+    @apply opacity-100;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

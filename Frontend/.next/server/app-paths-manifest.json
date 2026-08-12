@@ -1,0 +1,8 @@
+{
+  "/(auth)/register/page": "app/(auth)/register/page.js",
+  "/(app)/datasets/cleaning/page": "app/(app)/datasets/cleaning/page.js",
+  "/(app)/dashboard-builder/page": "app/(app)/dashboard-builder/page.js",
+  "/(app)/copilot/page": "app/(app)/copilot/page.js",
+  "/(app)/dashboard/page": "app/(app)/dashboard/page.js",
+  "/(app)/chat/page": "app/(app)/chat/page.js"
+}
