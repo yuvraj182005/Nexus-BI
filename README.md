@@ -1,271 +1,112 @@
 # 🚀 NexusBI AI
 
-> Enterprise AI-Powered Business Intelligence & Decision Intelligence Platform
+### Enterprise AI-Powered Business Intelligence & Decision Intelligence Platform
 
-NexusBI AI is a modern enterprise platform that combines **Business Intelligence, Artificial Intelligence, Data Analytics, Machine Learning, SQL Intelligence, Forecasting, Workflow Automation, and Interactive Dashboards** into a single unified system.
+NexusBI AI is an enterprise **Decision Intelligence Platform** that combines Artificial Intelligence, Business Intelligence, Data Analytics, Machine Learning, SQL Intelligence, Forecasting, Workflow Automation, and Interactive Dashboards into one unified platform.
 
-It enables organizations to transform raw business data into actionable insights through AI-powered analytics, automated workflows, natural language querying, and real-time visualizations.
-
----
-
-## ✨ Key Features
-
-- 🔐 Enterprise Authentication & RBAC
-- 📂 Workspace & Dataset Management
-- 🔌 Multiple Data Connectors
-- 📊 Automated Data Profiling
-- 🧹 AI Data Cleaning & Transformation
-- 🏷️ Semantic Layer & Business Glossary
-- 🤖 Natural Language to SQL
-- 📈 Analytics & Forecasting
-- 💡 AI Business Insights
-- 📉 Interactive Dashboards
-- 💬 Chat with Data (Hybrid RAG)
-- 🤝 Collaboration Workspace
-- 🔄 Workflow Automation
-- 📦 Plugin Marketplace
-- 🛡️ Governance & Audit Logs
-- 📡 Real-Time Streaming Analytics
-- 📑 Report Generation
-- 📊 Enterprise Observability
-- 💳 SaaS Billing & Subscription Management
+It transforms raw business data into **insights, recommendations, and actionable decisions**.
 
 ---
 
-## 🏗️ Architecture
+## ✨ Key Capabilities
 
-```
-Frontend (Next.js + React)
-          │
-          ▼
-FastAPI REST API
-          │
-────────────────────────────────────────
-AI Gateway
-Hybrid RAG
-Workflow Engine
-Job Orchestrator
-Streaming Engine
-Security Layer
-Analytics Engine
-Forecast Engine
-SQL Intelligence
-Visualization Engine
-────────────────────────────────────────
-          │
- PostgreSQL | MongoDB | Redis | DuckDB
-```
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-- shadcn/ui
-- Framer Motion
-- GSAP
-- ECharts
-- Plotly
-
-### Backend
-- FastAPI
-- SQLAlchemy
-- Alembic
-- PostgreSQL
-- MongoDB
-- Redis
-- DuckDB
-- Celery
-
-### AI & Analytics
-- OpenAI
-- Anthropic Claude
-- Gemini
-- Ollama
-- Hybrid RAG
-- LangChain
-- Scikit-Learn
-- Pandas
-- NumPy
-
-### DevOps
-- Docker
-- GitHub Actions
-- Prometheus
-- OpenTelemetry
+- 📂 **Data Management** — Upload, connect, validate, version, and manage datasets
+- 🔌 **Data Connectors** — Connect enterprise data sources and databases
+- 📊 **Data Profiling** — Statistics, missing values, duplicates, outliers, correlations, and quality scoring
+- 🧹 **AI Data Cleaning** — Intelligent preprocessing and transformation
+- 🧠 **Semantic Layer** — Business metrics, dimensions, glossary, and semantic understanding
+- 💬 **SQL Intelligence** — Natural-language-to-SQL with safe query execution
+- 📈 **Analytics** — EDA, descriptive statistics, trends, anomalies, and correlations
+- 🔮 **Forecasting** — Time-series forecasting and model evaluation
+- 💡 **Business Insights** — AI-generated explanations and recommendations
+- 🎯 **What-If Analysis** — Parameter sensitivity and scenario simulation
+- 📊 **Visualization Engine** — Automated chart recommendations and interactive visualizations
+- 🖥️ **Dashboard Builder** — Build and persist interactive dashboards
+- 🤖 **AI Copilot** — AI-powered cross-platform decision assistance
+- 💬 **Chat With Data** — Natural-language conversations with enterprise datasets
+- ⚙️ **Workflow Automation** — Automated multi-stage data and analytics workflows
+- 📑 **Reports** — Automated business reports and exports
+- 🔔 **Notifications** — Alerts and event notifications
+- 🔎 **Enterprise Search** — Search across datasets, dashboards, reports, KPIs, workflows, and models
+- 🔗 **Data Lineage** — Track dependencies and impact analysis
+- 🔐 **Governance & Security** — RBAC, PII detection, auditing, security controls, and compliance
+- 🧩 **Plugin Marketplace** — Plugins, connectors, templates, and extensions
 
 ---
 
-## 📂 Project Structure
+# 🔄 NexusBI AI End-to-End Flow
 
-```
-frontend/
-backend/
+NexusBI AI follows a complete:
 
-backend/app/
- ├── analytics
- ├── audit
- ├── auth
- ├── catalog
- ├── collaboration
- ├── connectors
- ├── copilot
- ├── dashboards
- ├── datasets
- ├── forecasting
- ├── governance
- ├── insights
- ├── jobs
- ├── lineage
- ├── marketplace
- ├── observability
- ├── plugins
- ├── preprocessing
- ├── rag
- ├── reports
- ├── saas
- ├── search
- ├── security
- ├── semantic
- ├── sql_engine
- ├── streaming
- ├── visualization
- └── workflows
-```
+**Data → Intelligence → Analytics → Visualization → Decision**
 
----
+pipeline.
 
-## 🚀 Getting Started
+```mermaid
+flowchart TB
 
-### Clone Repository
+    A["📂 Data Sources"] --> B["🔌 Connectors"]
+    A --> C["📤 Dataset Upload"]
 
-```bash
-git clone https://github.com/yourusername/NexusBI-AI.git
-cd NexusBI-AI
-```
+    B --> D["🗄️ Dataset Management"]
+    C --> D
 
-### Backend
+    D --> E["🔍 Data Validation"]
+    E --> F["📊 Data Profiling"]
+    F --> G["🧹 AI Cleaning & Transformation"]
 
-```bash
-cd backend
+    G --> H["🧠 Semantic Layer"]
 
-python -m venv .venv
+    H --> I["💬 Natural Language SQL"]
+    H --> J["📊 Analytics"]
+    H --> K["🔮 Forecasting"]
 
-source .venv/bin/activate
-# Windows
-.venv\Scripts\activate
+    I --> L["⚡ SQL Execution"]
+    J --> M["💡 Business Insights"]
+    K --> M
 
-pip install -r requirements.txt
+    M --> N["🎯 What-If Analysis"]
 
-alembic upgrade head
+    J --> O["📈 Visualization"]
+    K --> O
+    M --> O
+    N --> O
 
-uvicorn app.main:app --reload
-```
+    O --> P["🖥️ Dashboard Builder"]
+    P --> Q["📊 Interactive Dashboards"]
 
-### Frontend
+    H --> R["🤖 AI Copilot"]
+    H --> S["💬 Chat With Data"]
+    H --> T["🔎 Hybrid RAG"]
 
-```bash
-cd frontend
+    M --> U["⚙️ Workflow Automation"]
+    U --> V["📑 Reports"]
+    U --> W["🔔 Notifications"]
 
-npm install
+    Q --> X["🎯 Business Decisions"]
+    V --> X
+    W --> X
 
-npm run dev
-```
+    Y["🔐 Governance & Security"] -.-> D
+    Y -.-> H
+    Y -.-> P
 
----
-
-## 🌐 API Documentation
-
-```
-http://localhost:8000/api/v1/docs
-```
-
----
-
-## 📊 Core Workflow
-
-```
-Login
-   ↓
-Workspace
-   ↓
-Upload Dataset
-   ↓
-Data Profiling
-   ↓
-AI Cleaning
-   ↓
-Semantic Layer
-   ↓
-Natural Language SQL
-   ↓
-Analytics
-   ↓
-Forecasting
-   ↓
-Visualization
-   ↓
-Dashboard Builder
-   ↓
-Reports
-```
-
----
-
-## 🔒 Enterprise Features
-
-- Multi-Tenant Architecture
-- JWT Authentication
-- RBAC
-- MFA Support
-- Hybrid RAG
-- AI Gateway
-- Audit Logs
-- Governance
-- Plugin SDK
-- Workflow Automation
-- Streaming Analytics
-- Observability
-
----
-
-                    ┌──────────────────────┐
-                    │     NexusBI AI       │
-                    │ Decision Intelligence│
-                    └──────────┬───────────┘
-                               │
-        ┌──────────────────────┼──────────────────────┐
-        │                      │                      │
-   Data Layer              AI Layer             Experience
-        │                      │                      │
- ┌──────┴──────┐        ┌──────┴──────┐        ┌──────┴──────┐
- │ Connectors  │        │ AI Gateway  │        │ Dashboards  │
- │ Datasets    │        │ AI Agents   │        │ Analytics   │
- │ PostgreSQL  │        │ RAG         │        │ Reports     │
- │ MongoDB     │        │ Copilot     │        │ Chat        │
- │ Files       │        │ Memory      │        │ Visuals     │
- └─────────────┘        └─────────────┘        └─────────────┘
-        │                      │                      │
-        └──────────────────────┼──────────────────────┘
-                               │
-                  ┌────────────┴────────────┐
-                  │ Governance & Security   │
-                  │ RBAC • Audit • Lineage  │
-                  │ PII • Compliance        │
-                  └─────────────────────────┘
+    Z["📝 Audit & Lineage"] -.-> D
+    Z -.-> I
+    Z -.-> P
+    Z -.-> U
 
 
 
-## 👨‍💻 Author
+👨‍💻 Author
+K. Yuvraj Sundaram
 
-**K. Yuvraj Sundaram**
+Computer Science (Data Science) Undergraduate
+Dayananda Sagar College of Engineering
 
-- LinkedIn: https://linkedin.com/in/k-yuvraj-sundaram-a34790352
+Interested in:
 
----
+AI Engineering • Machine Learning • Data Analytics • Business Intelligence • Generative AI 
 
-⭐ If you find this project useful, consider giving it a star.
+🔗 LinkedIn:
+https://linkedin.com/in/k-yuvraj-sundaram-a34790352
